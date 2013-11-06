@@ -6,6 +6,7 @@ input_string = raw_input("Enter Search String \n")
 
 try:
   search_string = ('+').join(input_string.split())
+  # Instead of my-ajax-site.com , please put your own identifier. Google TOS says so.
   json_response =  os.popen("curl -e http://www.my-ajax-site.com 'https://ajax.googleapis.com/ajax/services/search/images?v=1.0&q="+search_string+"'").read()
   data = json.loads(json_response)
   first_result = str(data["responseData"]["results"][0]["unescapedUrl"].decode("ascii"))
