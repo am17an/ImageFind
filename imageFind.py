@@ -11,11 +11,9 @@ try:
   first_result = str(data["responseData"]["results"][0]["unescapedUrl"].decode("ascii"))
   image_format = first_result[first_result.find(".",len(first_result)-5,len(first_result)):]
   image_name = '_'.join(input_string.split()) + image_format 
-  print first_result
   urlretrieve(first_result,image_name)
   os.popen("qlmanage -p " + image_name) 
 except Exception as e:
-  print e
   print "One or many things went wrong, let's have some muffins!"
 
 
