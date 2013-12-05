@@ -23,11 +23,10 @@ try:
   image_name += ''.join(random.choice(string.ascii_uppercase + string.digits) for i in xrange(6))
   image_name += image_format
   urlretrieve(first_result,image_name)
-  os.popen("qlmanage -p " + image_name) 
+  os.popen("open " + image_name) 
   if options.delete == True:
     os.popen("rm " + image_name)
 except Exception as e:
-  print e
   print "One or many things went wrong, let's have some muffins!"
 
 
